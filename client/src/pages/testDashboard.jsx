@@ -2,12 +2,15 @@
 import React, { useEffect, useState } from "react";
 import "./testDashboard.css";
 import { useNavigate } from "react-router-dom";
+import questions from "../components/questions.json";
 
 function TestDashboard() {
-  const [currentQuestion, setCurrentQuestion] = useState(1);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   const navigate = useNavigate();
-  const [timer, setTimer] = useState(1800);
+  const [timer, setTimer] = useState(900);
   const [finishStatus, setFinishStatus] = useState(false);
+  const [questionData, setQuestionData] = useState(questions);
+  const [selectedOption, setSelectedOption] = useState({});
 
 
   //going to next question
@@ -17,7 +20,41 @@ function TestDashboard() {
 
   //going to previous question
   const handlePrev = () => {
-    setCurrentQuestion((prev) => Math.max(1, prev - 1));
+    setCurrentQuestion((prev) => Math.max(0, prev - 1));
+  };
+
+  //saving the answer of the current question
+  useEffect(() => {
+    setSelectedOption((prev) => {
+      return {
+        ...prev,
+        [currentQuestion]: document.querySelector(`input[name="question${currentQuestion}"]:checked`)
+          ? document.querySelector(`input[name="question${currentQuestion}"]:checked`).value
+          : null,
+      };
+    });
+  }, [currentQuestion]);
+
+  //saving for prev question
+  useEffect(() => {
+    if (selectedOption[currentQuestion] !== undefined) {
+      const radioButtons = document.querySelectorAll(`input[name="question${currentQuestion}"]`);
+      radioButtons.forEach((button) => {
+        if (button.value === selectedOption[currentQuestion]) {
+          button.checked = true;
+        } else {
+          button.checked = false;
+        }
+      });
+    }
+  }, [currentQuestion, selectedOption]);
+
+  //handle option change
+  const handleOptionChange = (selectedValue) => {
+    setSelectedOption((prev) => ({
+      ...prev,
+      [currentQuestion]: selectedValue,
+    }));
   };
 
   //finishing the test
@@ -71,6 +108,67 @@ function TestDashboard() {
     // eslint-disable-next-line
   }, [navigate]);
 
+// Stopping the user from reloading the page, redirecting to home if he does so
+useEffect(() => {
+  const onBeforeUnload = (e) => {
+    const message =
+      "Reloading the page will close & submit the test, and you won't be able to take it again.";
+    e.returnValue = message;
+    return message;
+  };
+
+  window.addEventListener("beforeunload", onBeforeUnload);
+
+  return () => {
+    window.removeEventListener("beforeunload", onBeforeUnload);
+  };
+}, []);
+
+// Redirect to home when the user confirms leaving the page
+useEffect(() => {
+  const onUnload = (e) => {
+    e.preventDefault();
+    if (!finishStatus) {
+      const confirmationMessage =
+        "Navigating away will close & submit the test, and you won't be able to take it again.";
+      e.returnValue = confirmationMessage;
+      return confirmationMessage;
+    }
+  };
+
+  window.addEventListener("unload", onUnload);
+
+  return () => {
+    window.removeEventListener("unload", onUnload);
+  };
+}, [finishStatus]);
+
+
+
+  const fetchQuestions = async () => {
+    try {
+      const response = await fetch(questions);
+      const data = await response.json();
+
+      //shuffling the questions out of 72
+      const shuffledQuestions = data.sort(() => Math.random() - 0.5);
+
+      console.log("Shuffled Questions:", shuffledQuestions.length); // Debug log
+
+      //taking only 30 questions
+      const selectedQuestions = shuffledQuestions.slice(0, 30);
+      setQuestionData(selectedQuestions);
+    } catch (error) {
+      console.error("Error fetching questions:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (questionData === null) {
+      fetchQuestions();
+    }
+    // eslint-disable-next-line
+  }, []);
 
 
   return (
@@ -78,9 +176,8 @@ function TestDashboard() {
       <div className="side-panel">
         <h3>Question Numbers</h3>
         <ul>
-          {/* Generate question numbers dynamically */}
-          {Array.from({ length: 30 }, (_, index) => (
-            <li key={index} className={currentQuestion === index + 1 ? "active" : ""}>
+          {questionData.map((_, index) => (
+            <li key={index} className={currentQuestion === index ? "active" : ""}>
               {index + 1}
             </li>
           ))}
@@ -94,38 +191,32 @@ function TestDashboard() {
         </div>
 
         <div className="question-box">
-          <h2>Question {currentQuestion}</h2>
-          <p>To include the HTTP server in the node module, what function do we use?</p>
+          <h2>Question {currentQuestion + 1}</h2>
+          <p>{questionData[currentQuestion].question}</p>
 
-          {/* Options */}
           <div className="options">
-            <label>
-              <input type="radio" name={`question${currentQuestion}`} value="option1" />
-              get()
-            </label>
-            <label>
-              <input type="radio" name={`question${currentQuestion}`} value="option2" />
-              require()
-            </label>
-            <label>
-              <input type="radio" name={`question${currentQuestion}`} value="option3" />
-              createServer()
-            </label>
-            <label>
-              <input type="radio" name={`question${currentQuestion}`} value="option4" />
-              None of the above
-            </label>
+            {questionData[currentQuestion].options.map((option, index) => (
+              <label key={index}>
+                <input
+                  type="radio"
+                  name={`question${currentQuestion}`}
+                  value={`option${index + 1}`}
+                  checked={selectedOption[currentQuestion] === `option${index + 1}`}
+                  onChange={() => handleOptionChange(`option${index + 1}`)}
+                />
+                {option}
+              </label>
+            ))}
           </div>
 
-          {/* Save Button */}
           <button className="save-button">Save</button>
         </div>
 
         <div className="bottom-bar">
-          <button onClick={handlePrev} disabled={currentQuestion === 1}>
+          <button onClick={handlePrev} disabled={currentQuestion === 0}>
             Prev
           </button>
-          <button onClick={handleNext} disabled={currentQuestion === 30}>
+          <button onClick={handleNext} disabled={currentQuestion === questionData.length - 1}>
             Next
           </button>
         </div>

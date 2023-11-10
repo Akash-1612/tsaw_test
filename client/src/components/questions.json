@@ -1,0 +1,302 @@
+[
+  {
+    "question": "To include the HTTP server in the node module, what function do we use?",
+    "options": [
+      "get()",
+      "require()",
+      "createServer()",
+      "None of the above"
+    ],
+    "correctAnswer": "createServer()"
+  },
+  {
+    "question": "_____ is an interactive shell that processes Node.",
+    "options": [
+      "REPL",
+      "REAL",
+      "RESP",
+      "None of the above"
+    ],
+    "correctAnswer": "REPL"
+  },
+  {
+    "question": "How can we install the node body-parser module?",
+    "options": [
+      "npm install body-parser",
+      "npm install body",
+      "npm install body-parser --save",
+      "None of the above"
+    ],
+    "correctAnswer": "npm install body-parser --save"
+  },
+  {
+    "question": "What method is used to return the current working directory of the process?",
+    "options": [
+      "process.cwd()",
+      "process.pwd",
+      "process.cmd()",
+      "process.dir"
+    ],
+    "correctAnswer": "process.cwd()"
+  },
+  {
+    "question": "Default scope in Node.js application is?",
+    "options": [
+      "Global",
+      "Local",
+      "Both",
+      "None of the above"
+    ],
+    "correctAnswer": "Local"
+  },
+  {
+    "question": "We can kill a process in Node.js using the keyboard shortcut?",
+    "options": [
+      "Ctrl + C",
+      "Ctrl + D",
+      "Ctrl + Z",
+      "None of the above"
+    ],
+    "correctAnswer": "Ctrl + C"
+  },
+  {
+    "question": "When does a stream fire a data event?",
+    "options": [
+      "When there is data available to read",
+      "When there is no data available to read",
+      "When the stream is closed",
+      "None of the above"
+    ],
+    "correctAnswer": "When there is data available to read"
+  },
+  {
+    "question": "Which of the following is true about readable streams?",
+    "options": [
+      "They are used for read operation",
+      "They are used for write operation",
+      "They are used for both read and write operation",
+      "None of the above"
+    ],
+    "correctAnswer": "They are used for read operation"
+  },
+  {
+    "question": "Which of the following is true about writable streams?",
+    "options": [
+      "They are used for read operation",
+      "They are used for write operation",
+      "They are used for both read and write operation",
+      "None of the above"
+    ],
+    "correctAnswer": "They are used for write operation"
+  },
+  {
+    "question": "Which of the following is true about duplex streams?",
+    "options": [
+      "They are used for read operation",
+      "They are used for write operation",
+      "They are used for both read and write operation",
+      "None of the above"
+    ],
+    "correctAnswer": "They are used for both read and write operation"
+  },
+  {
+    "question": "Which of the following is true about transform streams?",
+    "options": [
+      "They are used for read operation",
+      "They are used for write operation",
+      "They are used for both read and write operation",
+      "None of the above"
+    ],
+    "correctAnswer": "They are used for both read and write operation"
+  },
+  {
+    "question": "Which of the following is true about pipe() method?",
+    "options": [
+      "It is used to read data from a stream",
+      "It is used to write data to a stream",
+      "It is used to read data from a stream and write it over to another stream simultaneously",
+      "None of the above"
+    ],
+    "correctAnswer": "It is used to read data from a stream and write it over to another stream simultaneously"
+  },
+  {
+    "question": "Which of the following is true about the process.nextTick() method?",
+    "options": [
+      "It is used to schedule a callback function that is to be invoked in the next iteration of the event loop",
+      "It is used to schedule a callback function that is to be invoked in the current iteration of the event loop",
+      "It is used to schedule a callback function that is to be invoked in the next iteration of the event loop after the current operation completes",
+      "None of the above"
+    ],
+    "correctAnswer": "It is used to schedule a callback function that is to be invoked in the next iteration of the event loop after the current operation completes"
+  },
+  {
+    "question": "Which of the following is true about the process.setImmediate() method?",
+    "options": [
+      "It is used to schedule a callback function that is to be invoked in the next iteration of the event loop",
+      "It is used to schedule a callback function that is to be invoked in the current iteration of the event loop",
+      "It is used to schedule a callback function that is to be invoked in the next iteration of the event loop after the current operation completes",
+      "None of the above"
+    ],
+    "correctAnswer": "It is used to schedule a callback function that is to be invoked in the next iteration of the event loop"
+  },
+  {
+    "question": "What command is used to manage different NodeJS veresions?",
+    "options": [
+      "nvm",
+      "npm",
+      "node",
+      "None of the above"
+    ],
+    "correctAnswer": "nvm"
+  },
+  {
+    "question": "Which of the following routes is considered a RESTful configuration for ExpressJS?",
+    "options": [
+      "/",
+      "/users",
+      "/users/:userId",
+      "All of the above"
+    ],
+    "correctAnswer": "All of the above"
+  },
+  {
+    "question": "Asynchronous functions can trigger the callback of the catch part using what keyword?",
+    "options": [
+      "throw",
+      "catch",
+      "error",
+      "None of the above"
+    ],
+    "correctAnswer": "error"
+  },
+  {
+    "question": "Which of the following statement is correct?",
+    "options": [
+      "js is Server Side Scripting language",
+      "js is Client Side Scripting language",
+      "js is both Server Side and Client Side Scripting language",
+      "None of the above"
+    ],
+    "correctAnswer": "js is both Server Side and Client Side Scripting language"
+  },
+  {
+    "question": "What does the REPL stand for?",
+    "options": [
+      "Read Evaluate Print Loop",
+      "Read Evaluate Print Line",
+      "Read Evaluate Print Log",
+      "None of the above"
+    ],
+    "correctAnswer": "Read Evaluate Print Loop"
+  },
+  {
+    "question": "Which of the following command is used to start a REPL session?",
+    "options": [
+      "node",
+      "nodejs",
+      "node shell",
+      "None of the above"
+    ],
+    "correctAnswer": "node"
+  },
+  {
+    "question": "In which language is Node.js written?",
+    "options": [
+      "All of the above",
+      "Java",
+      "C",
+      "C++"
+    ],
+    "correctAnswer": "All of the above"
+  },
+  {
+    "question": "Which of the following command is used to install the Node.js express module?",
+    "options": [
+      "npm install express",
+      "npm install express --save",
+      "npm install express -g",
+      "None of the above"
+    ],
+    "correctAnswer": "npm install express --save"
+  },
+  {
+    "question": "What is Callback?",
+    "options": [
+      "Callback is an asynchronous equivalent for a function",
+      "Callback is a procedure that is called at the completion of a given task",
+      "Both of the above",
+      "None of the above"
+    ],
+    "correctAnswer": "Both of the above"
+  },
+  {
+    "question": "Which of the following extension is used to save the Node.js files?",
+    "options": [
+      ".js",
+      ".node",
+      ".java",
+      "None of the above"
+    ],
+    "correctAnswer": ".js"
+  },
+  {
+    "question": "The Node.js modules can be exposed using:",
+    "options": [
+      "module.expose",
+      "module.expose()",
+      "module.exports",
+      "None of the above"
+    ],
+    "correctAnswer": "module.exports"
+  },
+  {
+    "question": "Which of the following module is not a built-in node module?",
+    "options": [
+      "os",
+      "path",
+      "http",
+      "None of the above"
+    ],
+    "correctAnswer": "None of the above"
+  },
+  {
+    "question": "Which of the following method of fs module is used to get file information?",
+    "options": [
+      "fs.open()",
+      "fs.stat()",
+      "fs.read()",
+      "None of the above"
+    ],
+    "correctAnswer": "fs.stat()"
+  },
+  {
+    "question": "What does the fs module stand for?",
+    "options": [
+      "File System",
+      "File Stream",
+      "File Storage",
+      "None of the above"
+    ],
+    "correctAnswer": "File System"
+  },
+  {
+    "question": "What is Node.js used for?",
+    "options": [
+      "Front-end development",
+      "Database management",
+      "Server-side scripting",
+      "Graphics design"
+    ],
+    "correctAnswer": "Server-side scripting"
+  },
+  {
+    "question": "In React, what is the virtual DOM?",
+    "options": [
+      "A testing library",
+      "An optimization technique",
+      "A JavaScript framework",
+      "A lightweight database"
+    ],
+    "correctAnswer": "An optimization technique"
+  }
+]

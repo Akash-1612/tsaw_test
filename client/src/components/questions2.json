@@ -1,0 +1,422 @@
+[
+  {
+    "question": "What does MongoDB store?",
+    "options": [
+      "Relational data",
+      "Tabular data",
+      "Document-oriented data",
+      "Binary data"
+    ],
+    "correctAnswer": "Document-oriented data"
+  },
+  {
+    "question": "What is Express.js?",
+    "options": [
+      "A front-end framework",
+      "A back-end framework",
+      "A database management system",
+      "A testing library"
+    ],
+    "correctAnswer": "A back-end framework"
+  },
+  {
+    "question": "Which command is used to install Node.js packages?",
+    "options": [
+      "npm install",
+      "node install",
+      "package install",
+      "install npm"
+    ],
+    "correctAnswer": "npm install"
+  },
+  {
+    "question": "What is JSX?",
+    "options": [
+      "A file extension",
+      "A syntax extension",
+      "A programming language",
+      "A package manager"
+    ],
+    "correctAnswer": "A syntax extension"
+  },
+  {
+    "question": "Which of the following is NOT a valid MongoDB data type?",
+    "options": [
+      "String",
+      "Array",
+      "Boolean",
+      "Float"
+    ],
+    "correctAnswer": "Float"
+  },
+  {
+    "question": "What is middleware in Express.js?",
+    "options": [
+      "A software application",
+      "A code editor",
+      "A software layer between applications",
+      "A testing library"
+    ],
+    "correctAnswer": "A software layer between applications"
+  },
+  {
+    "question": "What is the purpose of package.json in Node.js?",
+    "options": [
+      "To store user data",
+      "To manage project dependencies",
+      "To create virtual environments",
+      "To define database schemas"
+    ],
+    "correctAnswer": "To manage project dependencies"
+  },
+  {
+    "question": "In React, what is state?",
+    "options": [
+      "A geographical location",
+      "An initial value",
+      "A container for mutable data",
+      "A design pattern"
+    ],
+    "correctAnswer": "A container for mutable data"
+  },
+  {
+    "question": "Which command is used to start an Express.js application?",
+    "options": [
+      "node start",
+      "npm run dev",
+      "express start",
+      "npm start"
+    ],
+    "correctAnswer": "npm start"
+  },
+  {
+    "question": "What is Mongoose in the context of MongoDB?",
+    "options": [
+      "A JavaScript framework",
+      "A testing library",
+      "A back-end framework",
+      "An Object Data Modeling (ODM) library"
+    ],
+    "correctAnswer": "An Object Data Modeling (ODM) library"
+  },
+  {
+    "question": "What is the purpose of Babel in a React project?",
+    "options": [
+      "To transpile JSX code",
+      "To test components",
+      "To manage project dependencies",
+      "To create virtual environments"
+    ],
+    "correctAnswer": "To transpile JSX code"
+  },
+  {
+    "question": "What does the acronym CRUD stand for in the context of MongoDB?",
+    "options": [
+      "Create, Retrieve, Update, Delete",
+      "Compile, Run, Understand, Debug",
+      "Copy, Read, Update, Deploy",
+      "Calculate, Record, Update, Display"
+    ],
+    "correctAnswer": "Create, Retrieve, Update, Delete"
+  },
+  {
+    "question": "Which of the following is a routing method in Express.js?",
+    "options": [
+      "POST",
+      "QUERY",
+      "SEARCH",
+      "UPDATE"
+    ],
+    "correctAnswer": "POST"
+  },
+  {
+    "question": "What is the purpose of webpack in a React project?",
+    "options": [
+      "To transpile JavaScript code",
+      "To manage project dependencies",
+      "To create virtual environments",
+      "To test components"
+    ],
+    "correctAnswer": "To transpile JavaScript code"
+  },
+  {
+    "question": "Which of the following is a valid React component lifecycle method?",
+    "options": [
+      "onUpdate",
+      "beforeRender",
+      "componentDidMount",
+      "renderComplete"
+    ],
+    "correctAnswer": "componentDidMount"
+  },
+  {
+    "question": "What is the role of the package-lock.json file in a Node.js project?",
+    "options": [
+      "To store user data",
+      "To manage project dependencies",
+      "To create virtual environments",
+      "To define database schemas"
+    ],
+    "correctAnswer": "To manage project dependencies"
+  },
+  {
+    "question": "In MongoDB, what is a document?",
+    "options": [
+      "A file containing text",
+      "A record in a database",
+      "A style sheet",
+      "A data type"
+    ],
+    "correctAnswer": "A record in a database"
+  },
+  {
+    "question": "Which of the following is NOT a valid HTTP method?",
+    "options": [
+      "GET",
+      "POST",
+      "FETCH",
+      "DELETE"
+    ],
+    "correctAnswer": "FETCH"
+  },
+  {
+    "question": "What is the purpose of nodemon in a Node.js project?",
+    "options": [
+      "To transpile JavaScript code",
+      "To automatically restart the server on file changes",
+      "To test components",
+      "To manage project dependencies"
+    ],
+    "correctAnswer": "To automatically restart the server on file changes"
+  },
+  {
+    "question": "What is JSX in React?",
+    "options": [
+      "A file extension",
+      "A syntax extension",
+      "A programming language",
+      "A package manager"
+    ],
+    "correctAnswer": "A syntax extension"
+  },
+  {
+    "question": "Which of the following is a valid MongoDB aggregation framework operator?",
+    "options": [
+      "$filter",
+      "$group",
+      "$sort",
+      "$search"
+    ],
+    "correctAnswer": "$group"
+  },
+  {
+    "question": "What is Express.js often used for in web development?",
+    "options": [
+      "Front-end development",
+      "Database management",
+      "Server-side routing",
+      "Graphics design"
+    ],
+    "correctAnswer": "Server-side routing"
+  },
+  {
+    "question": "In React, what is the purpose of props?",
+    "options": [
+      "To manage project dependencies",
+      "To store user data",
+      "To pass data between components",
+      "To create virtual environments"
+    ],
+    "correctAnswer": "To pass data between components"
+  },
+  {
+    "question": "What is the purpose of the .env file in a Node.js project?",
+    "options": [
+      "To store user data",
+      "To manage project dependencies",
+      "To define environment variables",
+      "To create virtual environments"
+    ],
+    "correctAnswer": "To define environment variables"
+  },
+  {
+    "question": "Which of the following is a valid MongoDB query?",
+    "options": [
+      "db.find({})",
+      "db.update({})",
+      "db.insert({})",
+      "db.delete({})"
+    ],
+    "correctAnswer": "db.insert({})"
+  },
+  {
+    "question": "What is the purpose of the useEffect hook in React?",
+    "options": [
+      "To transpile JSX code",
+      "To manage project dependencies",
+      "To create virtual environments",
+      "To perform side effects in function components"
+    ],
+    "correctAnswer": "To perform side effects in function components"
+  },
+  {
+    "question": "What is the role of the public folder in a Create React App project?",
+    "options": [
+      "To store user data",
+      "To manage project dependencies",
+      "To create virtual environments",
+      "To serve static assets"
+    ],
+    "correctAnswer": "To serve static assets"
+  },
+  {
+    "question": "Which of the following is a valid Express.js middleware?",
+    "options": [
+      "body-parser",
+      "data-validator",
+      "route-handler",
+      "template-engine"
+    ],
+    "correctAnswer": "body-parser"
+  },
+  {
+    "question": "What is the purpose of the key attribute in React?",
+    "options": [
+      "To manage project dependencies",
+      "To store user data",
+      "To create virtual environments",
+      "To uniquely identify elements in a list"
+    ],
+    "correctAnswer": "To uniquely identify elements in a list"
+  },
+  {
+    "question": "In MongoDB, what is an index?",
+    "options": [
+      "A data type",
+      "A record in a database",
+      "A style sheet",
+      "An additional data structure that improves the speed of data retrieval operations"
+    ],
+    "correctAnswer": "An additional data structure that improves the speed of data retrieval operations"
+  },
+  {
+    "question": "What is the purpose of the ternary operator in JavaScript?",
+    "options": [
+      "To declare variables",
+      "To perform arithmetic operations",
+      "To create virtual environments",
+      "To write concise conditional statements"
+    ],
+    "correctAnswer": "To write concise conditional statements"
+  },
+  {
+    "question": "Which of the following is a valid React hook for managing state?",
+    "options": [
+      "useState",
+      "useEffect",
+      "useRouter",
+      "useContext"
+    ],
+    "correctAnswer": "useState"
+  },
+  {
+    "question": "What is MongoDB Compass?",
+    "options": [
+      "A web development framework",
+      "A testing library",
+      "A graphical user interface for MongoDB",
+      "A server-side routing tool"
+    ],
+    "correctAnswer": "A graphical user interface for MongoDB"
+  },
+  {
+    "question": "What is the purpose of the public keyword in an Express.js route?",
+    "options": [
+      "To serve static assets",
+      "To manage project dependencies",
+      "To define environment variables",
+      "To create virtual environments"
+    ],
+    "correctAnswer": "To serve static assets"
+  },
+  {
+    "question": "Which of the following is a valid way to create a React component?",
+    "options": [
+      "class MyComponent extends React.Component",
+      "function MyComponent() {}",
+      "const MyComponent = () => {}",
+      "All of the above"
+    ],
+    "correctAnswer": "All of the above"
+  },
+  {
+    "question": "What is the purpose of the .gitignore file in a Node.js project?",
+    "options": [
+      "To store user data",
+      "To manage project dependencies",
+      "To define environment variables",
+      "To specify files and directories that should be ignored by version control"
+    ],
+    "correctAnswer": "To specify files and directories that should be ignored by version control"
+  },
+  {
+    "question": "In MongoDB, what is a cursor?",
+    "options": [
+      "A pointing device",
+      "A data type",
+      "An additional data structure",
+      "A pointer to the result set of a query"
+    ],
+    "correctAnswer": "A pointer to the result set of a query"
+  },
+  {
+    "question": "What is the purpose of the fetch API in React?",
+    "options": [
+      "To transpile JavaScript code",
+      "To manage project dependencies",
+      "To create virtual environments",
+      "To make HTTP requests"
+    ],
+    "correctAnswer": "To make HTTP requests"
+  },
+  {
+    "question": "What is the role of the package.json file in a React project?",
+    "options": [
+      "To store user data",
+      "To manage project dependencies",
+      "To create virtual environments",
+      "To define environment variables"
+    ],
+    "correctAnswer": "To manage project dependencies"
+  },
+  {
+    "question": "In Express.js, what does the res object represent?",
+    "options": [
+      "The request object",
+      "The response object",
+      "The result of a database query",
+      "The root element of the document"
+    ],
+    "correctAnswer": "The response object"
+  },
+  {
+    "question": "What is the purpose of the .babelrc file in a React project?",
+    "options": [
+      "To transpile JavaScript code",
+      "To manage project dependencies",
+      "To create virtual environments",
+      "To define Babel configurations"
+    ],
+    "correctAnswer": "To define Babel configurations"
+  },
+  {
+    "question": "Which of the following is a valid React prop type?",
+    "options": [
+      "string",
+      "number",
+      "boolean",
+      "All of the above"
+    ],
+    "correctAnswer": "All of the above"
+  }
+]

@@ -20,7 +20,7 @@ function TestBox({ testName, onClose }) {
             </div>
             <div className="test-content">
                 <h3>About the Test</h3>
-                <p>Please do not move away from the window as the test is Auto-Proctored. Switching tabs is not allowed. Test will be automatically submitted after 3 tab switches. You'll get 30 minutes to attempt the test after which the test will be automatically submmitted.</p>
+                <p>Please do not move away from the window as the test is Auto-Proctored. Switching tabs is not allowed. Test will be automatically submitted after 3 tab switches. You'll get 15 minutes to attempt the test after which the test will be automatically submmitted.</p>
                 <h3>Marking System</h3>
                 <p>There will be 30 questions. 3 marks will be awarded for each correct attempt and -1 will be deducted for each wrong attempt. You need minimum of 40 marks to pass the test.</p>
                 <h3>Flag and Review System</h3>
