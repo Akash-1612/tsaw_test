@@ -7,7 +7,8 @@ const cors = require('cors');
 
 // Importing Routes
 const authRoute = require('./routes/auth');
-const userName = require('./routes/userName');
+
+
 
 // Middleware
 app.use(express.json());
@@ -15,7 +16,7 @@ app.use(cors());
 
 //Routes
 app.use('/api/auth', authRoute);
-// app.use('/api/userName', userName);
+
 
 
 // Starting Server

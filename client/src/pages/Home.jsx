@@ -1,15 +1,13 @@
 // home.jsx
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import "./home.css";
 import TestBox from "../components/testBox";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
 
 function Home() {
   const [showTestDetails, setShowTestDetails] = useState(false);
   const [testName, setTestName] = useState("");
-  const [searchQuery, setSearchQuery] = useState('');
-  const [userName, setUserName] = useState('');
+
 
   const handleTestClick = (event, test) => {
     event.preventDefault();
@@ -28,7 +26,7 @@ function Home() {
     if (storedShowTestDetails) {
       setShowTestDetails(JSON.parse(storedShowTestDetails));
     }
-  }, []); // Make sure to have an empty dependency array to run this effect only once
+  }, []); 
 
   // Save showTestDetails state to local storage on state change
   useEffect(() => {
@@ -41,17 +39,7 @@ function Home() {
     navigate("/");
   };
 
-  const fetchUser = useCallback(async() => {
-    try {
-      const response = await axios.get('http://localhost:5000/api/userName', {
-        params: {search: searchQuery},
-        headers: {'Authorization': localStorage.getItem('token')}
-      });
-      setUserName(response.data.name);
-    } catch (error) {
-      console.log('Error fetching username', error);
-    }
-  }, [searchQuery]);
+
 
   return (
     <div className="container">
@@ -60,7 +48,7 @@ function Home() {
           <span>TSAW Test</span>
         </div>
         <div className="user">
-          <span>Welcome, Akash</span>
+          <span>Welcome, User </span>
           <button onClick={handleLogout}>Logout</button>
         </div>
       </div>
@@ -71,7 +59,7 @@ function Home() {
         <div>
           <div className="welcome-container">
             <div className="welcomeText">
-              <h2>Hello {userName} 👋</h2>
+              <h2>Hello 👋</h2>
               <p>Welcome to our online test platform! We're excited to have you here and help you achieve your goals.
                 Good Luck with your test.</p>
             </div>

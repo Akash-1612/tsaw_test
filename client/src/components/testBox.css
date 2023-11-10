@@ -16,6 +16,12 @@
   .test-content {
     margin-bottom: 20px;
   }
+
+  .test-content p {
+    margin-bottom: 10px;
+    color: black;
+    font-weight: 400;
+  }
   
   .test-buttons {
     display: flex;

@@ -1,20 +1,26 @@
 // TestDashboard.jsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./testDashboard.css";
 import { useNavigate } from "react-router-dom";
 
 function TestDashboard() {
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const navigate = useNavigate();
+  const [timer, setTimer] = useState(1800);
+  const [finishStatus, setFinishStatus] = useState(false);
 
+
+  //going to next question
   const handleNext = () => {
     setCurrentQuestion((prev) => prev + 1);
   };
 
+  //going to previous question
   const handlePrev = () => {
     setCurrentQuestion((prev) => Math.max(1, prev - 1));
   };
 
+  //finishing the test
   const handleFinish = () => {
     const response = window.confirm("Are you sure you want to finish the test?");
 
@@ -22,6 +28,50 @@ function TestDashboard() {
       navigate("/home");
     }
   };
+
+
+  //timer
+  useEffect(() => {
+    const timerId = setInterval(() => {
+      setTimer((prev) => Math.max(0, prev - 1));
+    }, 1000);
+
+    return () => clearInterval(timerId);
+  }, []);
+//timer format
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+
+    return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+  }
+
+
+//Handling back button
+  const onBackButtonEvent = (e) => {
+    e.preventDefault();
+    if (!finishStatus) {
+      if (window.confirm("Navigating back will close & submit the test, and you won't be able to take it again.")) {
+        setFinishStatus(true)
+        navigate("/home");
+      } else {
+        window.history.pushState(null, null, window.location.pathname);
+        setFinishStatus(false)
+      }
+    }
+  }
+
+  //Handling back button
+  useEffect(() => {
+    window.history.pushState(null, null, window.location.pathname);
+    window.addEventListener('popstate', onBackButtonEvent);
+    return () => {
+      window.removeEventListener('popstate', onBackButtonEvent);
+    };
+    // eslint-disable-next-line
+  }, [navigate]);
+
+
 
   return (
     <div className="test-dashboard">
@@ -39,7 +89,7 @@ function TestDashboard() {
 
       <div className="main-content">
         <div className="top-bar">
-          <div>Timer: 30:00</div>
+          <div>Timer: {formatTime(timer)}</div>
           <button onClick={handleFinish}>Finish</button>
         </div>
 
