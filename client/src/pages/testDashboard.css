@@ -18,17 +18,43 @@
 .side-panel ul {
   list-style: none;
   padding: 0;
-  margin: 0;
-  color: white;
+  margin-top: 0px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 5px;
 }
 
 .side-panel li {
   padding: 5px;
   cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.side-panel li.attempted {
+  color: #28a745;
+}
+
+.side-panel li.review:not(.attempted) {
+  color: #ffc107; 
+}
+
+.side-panel li.not-attempted {
+  color: #dc3545;
+}
+
+.side-panel li:hover {
+  background-color: #ddd;
 }
 
 .side-panel li.active {
   background-color: #ddd;
+  cursor: default;
+}
+
+.side-panel li.attempted.active,
+.side-panel li.review.active {
+  color: #fff;
 }
 
 .main-content {
@@ -87,7 +113,7 @@
   margin-bottom: 10px;
 }
 
-.save-button {
+.review-button {
   background-color: #28a745;
   color: #fff;
   border: none;
@@ -95,11 +121,16 @@
   cursor: pointer;
 }
 
-.save-button:hover {
+.review-button:hover {
   background-color: #218838;
 }
 
 .tabCounter p {
   font-size: 18px;
   font-weight: 600;
+}
+
+.question-status p{
+  margin: 8px;
+  font-weight: 400;
 }

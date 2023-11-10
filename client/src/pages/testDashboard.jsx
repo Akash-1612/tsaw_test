@@ -151,7 +151,7 @@ function TestDashboard() {
     // eslint-disable-next-line
   }, []);
 
-  //Handling tab switch
+  // Handling tab switch
   const handleTabSwitch = () => {
     setTabSwitchCount((count) => count + 1);
   };
@@ -169,9 +169,28 @@ function TestDashboard() {
   useEffect(() => {
     if (tabSwitchCount >= 3) {
       alert("You have switched tabs more than 3 times. Your test will be submitted now.");
-      handleFinish();
+      navigate("/home");
     }
-  }, [tabSwitchCount]);
+    // eslint-disable-next-line
+  }, [tabSwitchCount], navigate);
+
+  // Warning on refresh
+useEffect(() => {
+  const handleBeforeUnload = (e) => {
+    const confirmationMessage = "All answers will be lost. Are you sure you want to leave?";
+    e.returnValue = confirmationMessage; // Standard for most browsers
+    return confirmationMessage; // For some older browsers
+  };
+
+  window.addEventListener("beforeunload", handleBeforeUnload);
+
+  return () => {
+    window.removeEventListener("beforeunload", handleBeforeUnload);
+  };
+}, []);
+
+
+
 
 
 
@@ -182,11 +201,26 @@ function TestDashboard() {
         <h3>Question Numbers</h3>
         <ul>
           {questionData.map((_, index) => (
-            <li key={index} className={currentQuestion === index ? "active" : ""}>
+            <li
+              key={index}
+              className={`
+              ${currentQuestion === index ? "active" : ""}
+              ${selectedOption[index] ? "attempted" : "not-attempted"}
+              ${selectedOption[index] === null ? "review" : ""}
+            `}
+              onClick={() => setCurrentQuestion(index)}>
               {index + 1}
             </li>
           ))}
         </ul>
+
+        <div className="question-status">
+          <p>Questions: {questionData.length}</p>
+          <p>Attempted: {Object.keys(selectedOption).filter((key) => selectedOption[key] !== null).length}</p>
+          <p>Not Seen: {questionData.length - Object.keys(selectedOption).length}</p>
+          <p>Left for Review: {Object.keys(selectedOption).filter((key) => selectedOption[key] === null).length}</p>
+        </div>
+
       </div>
 
       <div className="main-content">
@@ -213,8 +247,6 @@ function TestDashboard() {
               </label>
             ))}
           </div>
-
-          <button className="save-button">Save</button>
         </div>
 
         <div className="bottom-bar">
@@ -226,8 +258,8 @@ function TestDashboard() {
           </button>
         </div>
         <div className="tabCounter">
-        <p>Tab Switch Count: {tabSwitchCount}! </p>
-      </div>
+          <p>Tab Switch Count: {tabSwitchCount}! </p>
+        </div>
       </div>
     </div>
   );

@@ -74,6 +74,13 @@ html, body {
     width: 80%;
     padding: 20px 50px;
   }
+
+  .welcomeText p {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Eagle Lake', serif;
+    font-family: 'Work Sans', sans-serif;
+  }
   
   .dashboard {
     display: flex;
