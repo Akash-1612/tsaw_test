@@ -11,6 +11,7 @@ function TestDashboard() {
   const [finishStatus, setFinishStatus] = useState(false);
   const [questionData, setQuestionData] = useState(questions);
   const [selectedOption, setSelectedOption] = useState({});
+  const [tabSwitchCount, setTabSwitchCount] = useState(0);
 
 
   //going to next question
@@ -67,14 +68,24 @@ function TestDashboard() {
   };
 
 
-  //timer
+  //Timer Setup
   useEffect(() => {
+    const savedTimer = localStorage.getItem("testTimer");
+    const initialTime = savedTimer ? parseInt(savedTimer, 10) : 900;
+
+    setTimer(initialTime);
+
     const timerId = setInterval(() => {
-      setTimer((prev) => Math.max(0, prev - 1));
+      setTimer((prev) => {
+        const newTime = Math.max(0, prev - 1);
+        localStorage.setItem("testTimer", newTime.toString());
+        return newTime;
+      });
     }, 1000);
 
     return () => clearInterval(timerId);
   }, []);
+
   //timer format
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
@@ -108,43 +119,14 @@ function TestDashboard() {
     // eslint-disable-next-line
   }, [navigate]);
 
-// Stopping the user from reloading the page, redirecting to home if he does so
-useEffect(() => {
-  const onBeforeUnload = (e) => {
-    const message =
-      "Reloading the page will close & submit the test, and you won't be able to take it again.";
-    e.returnValue = message;
-    return message;
-  };
+  //Warning on refresh
+  useEffect(() => {
+    window.onbeforeunload = function () {
+      return "All answers will be lost. Are you sure you want to leave?";
+    };
+  }, []);
 
-  window.addEventListener("beforeunload", onBeforeUnload);
-
-  return () => {
-    window.removeEventListener("beforeunload", onBeforeUnload);
-  };
-}, []);
-
-// Redirect to home when the user confirms leaving the page
-useEffect(() => {
-  const onUnload = (e) => {
-    e.preventDefault();
-    if (!finishStatus) {
-      const confirmationMessage =
-        "Navigating away will close & submit the test, and you won't be able to take it again.";
-      e.returnValue = confirmationMessage;
-      return confirmationMessage;
-    }
-  };
-
-  window.addEventListener("unload", onUnload);
-
-  return () => {
-    window.removeEventListener("unload", onUnload);
-  };
-}, [finishStatus]);
-
-
-
+  //fetching questions
   const fetchQuestions = async () => {
     try {
       const response = await fetch(questions);
@@ -162,7 +144,6 @@ useEffect(() => {
       console.error("Error fetching questions:", error);
     }
   };
-
   useEffect(() => {
     if (questionData === null) {
       fetchQuestions();
@@ -170,7 +151,31 @@ useEffect(() => {
     // eslint-disable-next-line
   }, []);
 
+  //Handling tab switch
+  const handleTabSwitch = () => {
+    setTabSwitchCount((count) => count + 1);
+  };
+  useEffect(() => {
+    const handleVisibiltyChange = () => {
+      if (document.hidden) {
+        handleTabSwitch();
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibiltyChange);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibiltyChange);
+    };
+  }, []);
+  useEffect(() => {
+    if (tabSwitchCount >= 3) {
+      alert("You have switched tabs more than 3 times. Your test will be submitted now.");
+      handleFinish();
+    }
+  }, [tabSwitchCount]);
 
+
+
+  // Rendering the test dashboard
   return (
     <div className="test-dashboard">
       <div className="side-panel">
@@ -220,6 +225,9 @@ useEffect(() => {
             Next
           </button>
         </div>
+        <div className="tabCounter">
+        <p>Tab Switch Count: {tabSwitchCount}! </p>
+      </div>
       </div>
     </div>
   );
