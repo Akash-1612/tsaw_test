@@ -1,0 +1,138 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .container {
+    background-color: #7cafb2;
+    height: 100vh;
+  }
+  
+  /* Navbar.css */
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #404154;
+    color: #fff;
+    padding: 15px 60px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo span {
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 10px;
+    font-family: 'Eagle Lake', serif;
+    font-family: 'Work Sans', sans-serif;
+  }
+  
+  .user span {
+    margin-right: 20px;
+    font-size: 18px;
+    font-family: 'Eagle Lake', serif;
+    font-family: 'Work Sans', sans-serif;
+  }
+  
+  .user button {
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Eagle Lake', serif;
+    font-family: 'Work Sans', sans-serif;
+  }
+  
+  .user button:hover {
+    background-color: #d00;
+  }
+  
+  
+  .welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .welcomeText {
+    text-align: Left;
+    background-color: rgb(47, 47, 108);
+    color: white;
+    border-radius: 20px;
+    width: 80%;
+    padding: 20px 50px;
+  }
+  
+  .dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 500px;
+    width: 85%;
+    margin: 20px auto 50px auto;
+    border-radius: 20px;
+  }
+  
+  .dashboard-child {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #000;
+    border-radius: 10px;
+    height: 436px;
+    margin: 10px;
+    background-color: aliceblue;
+  }
+
+  .dashboard-child h3 {
+    background-color: #404154;
+    margin: 0;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+  }
+  
+  .dashboard-child ol {
+    overflow-y: scroll;
+  }
+  
+  .dashboard-child ol::-webkit-scrollbar {
+    width: 0rem;
+  }
+  
+  .dashboard-child ol::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  
+  .dashboard-child a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+  }
+  
+  .dashboard-child li {
+    margin: 10px 10px 20px 10px;
+    font-weight: 600px;
+    position: relative;
+  }
+  
+  .dashboard-child li::before {
+    content: "✒️"; /* You can use any arrow icon you prefer here */
+    position: absolute;
+    right: 30px;
+  }
+  

@@ -1,0 +1,39 @@
+.test-box {
+    width: 80%;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 100px auto;
+  }
+  
+  .test-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .test-content {
+    margin-bottom: 20px;
+  }
+  
+  .test-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .test-buttons button {
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+    cursor: pointer;
+  }
+  
+  .test-buttons button:nth-child(1) {
+    background-color: rgb(227, 160, 160);
+  }
+  
+  .test-buttons button:nth-child(2) {
+    background-color: rgb(160, 227, 160);
+  }
