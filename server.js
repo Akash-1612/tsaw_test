@@ -19,6 +19,13 @@ app.use(cors());
 app.use('/api/auth', authRoute);
 app.use('/api/test', testRoute);
 
+//Build
+app.use(express.static('client/build'));
+const path = require('path');
+app.get('*', (req, res) => {
+res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
+
 
 
 // Starting Server

@@ -16,9 +16,7 @@ Clone the repository in your machine and run following commands in your terminal
 
 2. run - 'node index.js'
 
-3. Change directory to Client folder (the frontend) - cd client
-
-4. Run - 'npm start'
+3. open - 'localhost:5000/' in your browser.
 
 *NOTE - Please do not forgot to update the .env file.
 
