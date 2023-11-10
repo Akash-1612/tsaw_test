@@ -32,7 +32,7 @@ Some snapshots of the site.
 ![1](https://github.com/Akash-1612/tsaw_test/assets/73643555/0db431bd-0bd8-4f2e-a8db-2d770ec48b11)
 ![2](https://github.com/Akash-1612/tsaw_test/assets/73643555/1f3a9e49-c0ce-4a0f-9372-1bd084d02b00)
 ![3](https://github.com/Akash-1612/tsaw_test/assets/73643555/6c691dc4-6cb7-47d0-878d-74e4e6f34a55)
-![4](https://github.com/Akash-1612/tsaw_test/assets/73643555/660ccab7-efdc-496f-a416-f59ebb9152cc)
+![4](https://github.com/Akash-1612/tsaw_test/assets/73643555/7272384a-0584-41da-adca-76ed58f0cccd)
 ![5](https://github.com/Akash-1612/tsaw_test/assets/73643555/a9067ad3-7dd3-4319-9f20-575d5a284484)
 
 
