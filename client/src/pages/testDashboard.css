@@ -8,16 +8,18 @@
   }
   
   .side-panel {
-    width: 20%;
-    background-color: #f2f2f2;
+    width: 17%;
+    background-color: #404154;
     padding: 20px;
     overflow-y: scroll;
+    color: white;
   }
   
   .side-panel ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    color: white;
   }
   
   .side-panel li {
@@ -55,7 +57,7 @@
   
   .top-bar button:hover,
   .bottom-bar button:hover {
-    background-color: #0056b3;
+    background-color: green;
   }
   
   .top-bar button:disabled,
@@ -69,6 +71,10 @@
     border: 1px solid #ddd;
     padding: 20px;
     margin-bottom: 20px;
+  }
+
+  .question-box p {
+font-weight: 600;
   }
   
   .options {

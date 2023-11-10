@@ -333,3 +333,21 @@ footer a {
 .addform {
 	background-color: black;
 }
+
+.webTitle {
+	margin-top: 60px;
+}
+#one {
+    margin: 0px 0px 0px 60px;
+    font-size: 120px;
+    color: #404154;
+	font-family: 'Eagle Lake', serif;
+    font-family: 'Work Sans', sans-serif;
+}
+#two {
+    margin-left: 40px;
+    font-size: 85px;
+    color: #404154;
+	font-family: 'Eagle Lake', serif;
+    font-family: 'Work Sans', sans-serif;
+}

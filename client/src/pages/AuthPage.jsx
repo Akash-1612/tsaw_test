@@ -101,6 +101,12 @@ const AuthPage = () => {
           </div>
         </div>
       </div>
+      <div className='webTitle'>
+        <h1>
+          <span id="one">TSAW</span>
+          <span id="two">- Test</span>
+        </h1>
+      </div>
     </div>
   );
 };
