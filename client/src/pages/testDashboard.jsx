@@ -59,13 +59,70 @@ function TestDashboard() {
   };
 
   //finishing the test
-  const handleFinish = () => {
-    const response = window.confirm("Are you sure you want to finish the test?");
+  // const handleFinish = () => {
+  //   const response = window.confirm("Are you sure you want to finish the test?");
 
-    if (response) {
-      navigate("/home");
+  //   if (response) {
+  //     navigate("/home");
+  //   }
+  // };
+
+//handle finish
+const handleFinish = async () => {
+  const response = window.confirm("Are you sure you want to finish the test?");
+
+  if (response) {
+    const userId = "123"; // Replace with the actual user ID
+
+    const questionsAttempted = Object.keys(selectedOption).length;
+    const rightAnswers = calculateRightAnswers(); // You need to implement this function
+    const wrongAnswers = questionsAttempted - rightAnswers;
+    const totalMarks = calculateTotalMarks(rightAnswers, wrongAnswers);
+
+    // Send the test results to the server
+    try {
+      const res = await fetch("/api/test/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userId,
+          questionsAttempted,
+          rightAnswers,
+          wrongAnswers,
+          totalMarks,
+        }),
+      });
+
+      const data = await res.json();
+      console.log(data); // Log the server response
+    } catch (error) {
+      console.error("Error submitting test results:", error);
     }
-  };
+
+    navigate("/home");
+  }
+};
+
+//calculate right answers - +3 for right answers & -1 for wrong answers
+const calculateRightAnswers = () => {
+  let rightAnswers = 0;
+
+  for (const question in selectedOption) {
+    if (selectedOption[question] === questionData[question].answer) {
+      rightAnswers += 1;
+    }
+  }
+
+  return rightAnswers;
+};
+
+
+const calculateTotalMarks = (rightAnswers, wrongAnswers) => {
+  return rightAnswers * 3 - wrongAnswers;
+};
+
 
 
   //Timer Setup
